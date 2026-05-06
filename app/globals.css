@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* =========================
+     Brand Colors (Your Palette)
+  ========================= */
+  --color-primary: #1D4ED8;
+  --color-primary-hover: #60A5FA;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-accent: #60A5FA;
+
+  /* Header */
+  --color-header-bg: #1E293B;
+  --color-header-text: #F0F9FF;
+
+  /* Backgrounds */
+  --color-bg: #F0F9FF;
+  --color-surface: #ffffff;
+  --color-muted: #e2e8f0;
+
+  /* Text */
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+
+  /* Borders */
+  --color-border: #cbd5e1;
+
+  /* Semantic mapping */
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* =========================
+   Dark Mode
+========================= */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: #0b1220;
+    --color-surface: #111827;
+    --color-muted: #1f2937;
+
+    --color-text: #e5e7eb;
+    --color-text-muted: #9ca3af;
+
+    --color-border: #334155;
+
+    --color-primary: #60A5FA;
+    --color-primary-hover: #93c5fd;
+
+    --color-header-bg: #0f172a;
+    --color-header-text: #F0F9FF;
+
+    --color-background: var(--color-bg);
+    --color-foreground: var(--color-text);
   }
 }
 
+/* =========================
+   Base Styles
+========================= */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
