@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { FiGrid, FiCoffee, FiActivity, FiShoppingBag } from "react-icons/fi";
 
@@ -13,31 +14,26 @@ const categories = [
 ];
 
 export const DownBar = () => {
-  const router = useRouter();
   const searchParams = useSearchParams();
-
   const active = searchParams.get("category") || "all";
-
-  const handleClick = (category: string) => {
-    if (category === "all") {
-      router.push("/products");
-    } else {
-      router.push(`/products?category=${category}`);
-    }
-  };
 
   return (
     <div className="w-full border-b border-[var(--color-border)] bg-[var(--color-surface)] overflow-x-auto">
-      
+
       <div className="flex gap-3 px-4 py-2 whitespace-nowrap">
 
         {categories.map((c) => {
           const Icon = c.icon;
 
+          const href =
+            c.id === "all"
+              ? "/products"
+              : `/products?category=${c.id}`;
+
           return (
-            <button
+            <Link
               key={c.id}
-              onClick={() => handleClick(c.id)}
+              href={href}
               className={cn(
                 "flex items-center gap-2 px-3 py-1 rounded-md text-sm transition",
                 active === c.id
@@ -47,7 +43,7 @@ export const DownBar = () => {
             >
               <Icon className="text-base" />
               <span>{c.name}</span>
-            </button>
+            </Link>
           );
         })}
 

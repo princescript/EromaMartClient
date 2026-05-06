@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { TopBar } from "@/components/TopBar";
 import { DownBar } from "@/components/DownBar";
@@ -31,11 +32,17 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-          <TopBar />
+        <TopBar />
+        <Suspense
+          fallback={
+            <div className="w-full h-11 border-b border-[var(--color-border)] bg-[var(--color-surface)]" />
+          }
+        >
           <DownBar />
-          <main className="flex-1">{children}</main>
-          <Footer/>
-        </body>
+        </Suspense>
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
