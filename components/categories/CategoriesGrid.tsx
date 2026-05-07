@@ -1,45 +1,8 @@
 import Image from "next/image";
-
-const categories = [
-  {
-    id: "fruits",
-    name: "Fruits",
-    image:
-      "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: "vegetables",
-    name: "Vegetables",
-    image:
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: "dairy",
-    name: "Dairy",
-    image:
-      "https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: "snacks",
-    name: "Snacks",
-    image:
-      "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: "beverages",
-    name: "Beverages",
-    image:
-      "https://images.unsplash.com/photo-1524594227084-8a1f7b4d8a7f?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: "bakery",
-    name: "Bakery",
-    image:
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80",
-  },
-];
+import categories from "@/services/categoryService";
 
 export const CategoriesGrid = () => {
+
   return (
     <div>
       <h2 className="text-lg font-semibold mb-3">Categories</h2>
