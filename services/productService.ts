@@ -1,13 +1,14 @@
-const products = [
-  {
-    id: 1,
-    name: "Fresh Apple",
-    price: 60,
-    categoryId: 1,
-    unit: null,
-    perPiece: null,
-    image: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=400&q=80",
-  },
+export type Product = {
+  id: number;
+  name: string;
+  price: number;
+  categoryId: number;
+  image: string;
+  unit?: string | null;
+  perPiece?: number | null;
+};
+
+const products :  Product[]  = [
   {
     id: 2,
     name: "Green Vegetables Mix",

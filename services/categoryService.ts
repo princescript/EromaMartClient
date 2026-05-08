@@ -34,13 +34,7 @@ const categories = [
     name: "Bakery",
     image:
       "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    id: 7,
-    name: "Clothing",
-    image:
-      "https://images.unsplash.com/photo-1521335629791-ce4aec67dd49?auto=format&fit=crop&w=400&q=80",
-  },
+  }
 ];
 
 export default categories;
